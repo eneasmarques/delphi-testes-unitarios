@@ -22,6 +22,9 @@ type
     [TestCase('CaseCPF','123.123.123-12,12312312312')]
     [TestCase('CaseCNPJ','12.123.123/0001-12,12123123000112')]
     procedure TratarCPFCNPJ(aValue : String; aResultado : String);
+
+    [Test]
+    procedure ValidarCampos;
   end;
 
 implementation
@@ -42,7 +45,7 @@ var
   Resultado: string;
 begin
   Resultado := FPessoa.TrataCPFCNPJ('123.123.123-12');
-  Assert.IsTrue(Resultado = '12312312312', 'FPessoa.TrataCPFCNPJ apresentou um ERRO. Resultado = ' + Resultado);
+  Assert.IsTrue(Resultado = '12312312312', 'TPessoa.TrataCPFCNPJ apresentou um ERRO. Resultado = ' + Resultado);
 end;
 
 procedure TMyTestObject.TratarCPFCNPJ(aValue, aResultado: String);
@@ -51,6 +54,12 @@ var
 begin
   Resultado := FPessoa.TrataCPFCNPJ(aValue);
   Assert.AreEqual(Resultado, aResultado);
+end;
+
+procedure TMyTestObject.ValidarCampos;
+begin
+  FPessoa.Nome := '';
+  Assert.WillRaise(FPessoa.ValidarCampo, nil, 'TPessoa.ValidarCampo - Não foi gerado Exception para o campo Nome quando Vazio');
 end;
 
 initialization
