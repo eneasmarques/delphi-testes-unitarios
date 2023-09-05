@@ -3,3 +3,6 @@ Projeto para treinar Testes Unitários em Delphi utilizando [DUnitx](https://doc
 
 ### 📚 Aula - 01
 - Testa procedure FPEssoa.TrataCPFCNPJ(aValue : String) : String;
+
+### ~Z Aula - 02
+- Testa procedure FPessoa.TrataCPFCNPJ(aValue : String) : String com TestCase
