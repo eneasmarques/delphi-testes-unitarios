@@ -50,7 +50,7 @@ var
   Resultado: String;
 begin
   Resultado := FPessoa.TrataCPFCNPJ(aValue);
-  Assert.IsTrue(Resultado = aResultado, 'TPessoa.TrataCPFCNPJ ');
+  Assert.AreEqual(Resultado, aResultado);
 end;
 
 initialization
