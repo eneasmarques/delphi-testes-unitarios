@@ -4,12 +4,16 @@ Projeto para treinar Testes Unitários em Delphi utilizando [DUnitx](https://doc
 
 ### 📚 Aula - 01 - .IsTrue
 
-- Testa procedure FPEssoa.TrataCPFCNPJ(aValue : String) : String;
+- Testa procedure TPEssoa.TrataCPFCNPJ(aValue : String) : String;
 
 ### 📚 Aula - 02 - [TestCase]
 
-- Testa procedure FPessoa.TrataCPFCNPJ(aValue : String) : String com **TestCase**
+- Testa procedure TPessoa.TrataCPFCNPJ(aValue : String) : String com **TestCase**
 
 ### 📚 Aula - 03 - AreEqual
 
-- Testa procedure FPessoa.TrataCPFCNPJ(aValue : String) : String com **AreEqual**
+- Testa procedure TPessoa.TrataCPFCNPJ(aValue : String) : String com **AreEqual**
+
+### 📚 Aula - 04 - WillRaise
+
+- Testa TPessoa.ValidaCampos;
