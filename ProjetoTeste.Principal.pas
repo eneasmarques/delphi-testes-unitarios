@@ -35,7 +35,7 @@ type
 implementation
 
 uses
-  System.SysUtils;
+  System.SysUtils, Delphi.Mocks;
 
 procedure TMyTestObject.Insert;
 begin
@@ -75,7 +75,7 @@ end;
 procedure TMyTestObject.Setup;
 begin
   FPessoa := TPessoa.Create;
-  FPessoaDAO := TPessoaDAO.Create;
+  FPessoaDAO := TPessoaDAO.Create(TStub<iLog>.Create);
 end;
 
 procedure TMyTestObject.TearDown;

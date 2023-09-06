@@ -2,17 +2,23 @@ unit PessoaDAO;
 
 interface
 
+{$M+}
 uses
   FireDAC.Comp.Client, FireDAC.Stan.Param, Pessoa, Conexao, System.SysUtils;
 
 type
+  iLog = interface
+    ['{C309BD65-E0A0-4607-8EC0-60223BD0CBA5}']
+    procedure GravarLog(aLog: String);
+  end;
+
   TPessoaDAO = class
   private
     FPessoa: TPessoa;
     FQuery: TFDQuery;
-
+    FLog: iLog;
   public
-    constructor Create;
+    constructor Create(aLog: iLog);
     destructor Destroy; override;
 
     function Entidade: TPessoa;
