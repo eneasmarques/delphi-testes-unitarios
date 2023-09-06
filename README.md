@@ -17,3 +17,7 @@ Projeto para treinar Testes Unitários em Delphi utilizando [DUnitx](https://doc
 ### 📚 Aula - 04 - WillRaise
 
 - Testa TPessoa.ValidaCampos;
+
+### 📚 Aula - 05
+
+- Testa TPessoaDAO.Insert
