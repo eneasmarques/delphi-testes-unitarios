@@ -39,7 +39,6 @@ uses
 
 procedure TMyTestObject.Insert;
 begin
-
   try
     FPessoaDAO.Entidade.Guuid := '99999';
     FPessoaDAO.Entidade.Nome := '99999';

@@ -15,6 +15,10 @@ object DataModule1: TDataModule1
   object FDQuery1: TFDQuery
     CachedUpdates = True
     Connection = FDConnection1
+    UpdateOptions.AssignedValues = [uvLockWait]
+    UpdateOptions.LockWait = True
+    SQL.Strings = (
+      'select * from usuario')
     Left = 152
     Top = 160
   end
