@@ -13,6 +13,7 @@ object DataModule1: TDataModule1
     Top = 112
   end
   object FDQuery1: TFDQuery
+    CachedUpdates = True
     Connection = FDConnection1
     Left = 152
     Top = 160

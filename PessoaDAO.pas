@@ -12,13 +12,19 @@ type
     procedure GravarLog(aLog: String);
   end;
 
+  iSession = interface
+    ['{7A54D9CE-0C0A-40AB-9C56-1EA0E379E092}']
+    function User: String;
+  end;
+
   TPessoaDAO = class
   private
     FPessoa: TPessoa;
     FQuery: TFDQuery;
     FLog: iLog;
+    FSession: iSession;
   public
-    constructor Create(aLog: iLog);
+    constructor Create(aLog: iLog; aSession: iSession);
     destructor Destroy; override;
 
     function Entidade: TPessoa;
@@ -30,9 +36,14 @@ type
 
 implementation
 
-constructor TPessoaDAO.Create;
+constructor TPessoaDAO.Create(aLog: iLog; aSession: iSession);
 begin
   FPessoa := TPessoa.Create;
+  FLog := aLog;
+
+  FSession := aSession;
+
+  FLog.GravarLog('User: '+ FSession.User);
 
   if not Assigned(DataModule1) then
     DataModule1 := TDataModule1.Create(nil);

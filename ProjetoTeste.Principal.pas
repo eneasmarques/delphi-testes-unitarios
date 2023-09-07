@@ -73,9 +73,14 @@ begin
 end;
 
 procedure TMyTestObject.Setup;
+var
+  Mock: TMock<iSession>;
 begin
+  Mock := TMock<iSession>.Create;
+  Mock.Setup.WillReturn('usuario_teste');
+
   FPessoa := TPessoa.Create;
-  FPessoaDAO := TPessoaDAO.Create(TStub<iLog>.Create);
+  FPessoaDAO := TPessoaDAO.Create(TStub<iLog>.Create, Mock);
 end;
 
 procedure TMyTestObject.TearDown;
